@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kwitter Project - Iniciar Sesión</title>
+  <link rel="stylesheet" href="Kwitter.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 mt-5">
+        <h1 class="text-center">Iniciar Sesión</h1>
+        <div class="form-group">
+          <label for="username">Nombre de usuario:</label>
+          <input type="text" id="username" class="form-control">
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary" onclick="iniciarSesion()">Iniciar Sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Kwitter.js
+
+    // Función para iniciar sesión
+    function iniciarSesion() {
+      const usernameInput = document.getElementById('username');
+      const username = usernameInput.value;
+
+      // Verificar si se ingresó un nombre de usuario válido
+      if (username.trim() !== '') {
+        // Almacenar el nombre de usuario en el almacenamiento local
+        localStorage.setItem('username', username);
+
+        // Redirigir al usuario a la página kwitter_room.html
+        window.location.href = 'Kwitter_room.html';
+      } else {
+        alert('Por favor, ingresa un nombre de usuario válido.');
+      }
+    }
+  </script>
+</body>
+</html>
